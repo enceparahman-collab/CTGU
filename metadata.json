@@ -1,0 +1,7 @@
+{
+  "name": "Alfamart Citaringgul X450 - Album Kenangan Digital",
+  "description": "Aplikasi album kenangan digital dan hub informasi internal untuk tim Alfamart Citaringgul X450.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}
