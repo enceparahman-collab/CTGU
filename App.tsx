@@ -11,6 +11,7 @@ import AdminLogin from './components/AdminLogin';
 import SettingsPage from './components/SettingsPage';
 import DonationPage from './components/DonationPage';
 import RunningText from './components/RunningText';
+import JSMPromoBanner from './components/JSMPromoBanner';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState('home');
@@ -42,6 +43,7 @@ const App: React.FC = () => {
       case 'home':
         return (
           <div className="animate-in fade-in duration-700">
+            <JSMPromoBanner />
             <Hero isAdmin={isAdmin} />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-12 relative z-20">
               <MemoryGenerator />
