@@ -13,6 +13,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: '1',
     name: 'HERMAN',
     role: 'CHIEF OF STORE',
+    nik: '21098765',
     imageUrl: 'https://images.unsplash.com/photo-1519085184628-6a0b15422607?q=80&w=400&h=400&auto=format&fit=crop',
     quote: 'Memimpin dengan teladan untuk pelayanan terbaik.'
   },
@@ -20,13 +21,15 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: '2',
     name: 'ENCEP ABDU ROHMAN',
     role: 'ASSISTANT OF STORE',
-    imageUrl: 'https://images.canvas.com/b5a5b678-8d4e-4f3b-8c8e-8e8e8e8e8e8e/image.png?v=1', // Foto asli yang diunggah
+    nik: '22104532',
+    imageUrl: 'https://images.canvas.com/b5a5b678-8d4e-4f3b-8c8e-8e8e8e8e8e8e/image.png?v=1',
     quote: 'Kecepatan dan ketepatan dalam melayani pelanggan.'
   },
   {
     id: '3',
     name: 'SEHAN MAULANA',
     role: 'ASSISTANT OF STORE',
+    nik: '22115678',
     imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=400&h=400&auto=format&fit=crop',
     quote: 'Kekompakan tim adalah kunci kesuksesan toko.'
   },
@@ -34,6 +37,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: '4',
     name: 'DEDE',
     role: 'ASSISTANT OF STORE',
+    nik: '23019843',
     imageUrl: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=400&h=400&auto=format&fit=crop',
     quote: 'Senyum ikhlas dalam setiap pelayanan.'
   },
@@ -41,6 +45,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: '5',
     name: 'MUHAMAD RIZKY MUTAKIM',
     role: 'CREW',
+    nik: '23041122',
     imageUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?q=80&w=400&h=400&auto=format&fit=crop',
     quote: 'Kerapian rak untuk kenyamanan belanja Anda.'
   },
@@ -48,6 +53,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: '6',
     name: 'RINNAT DESAYEV',
     role: 'CREW',
+    nik: '23067788',
     imageUrl: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=400&h=400&auto=format&fit=crop',
     quote: 'Selalu sigap membantu kebutuhan pelanggan.'
   },
@@ -55,6 +61,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: '7',
     name: 'TANIA MUSTAFA',
     role: 'CASHIER',
+    nik: '24012233',
     imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=400&h=400&auto=format&fit=crop',
     quote: 'Transaksi lancar, pelanggan senang.'
   },
@@ -62,6 +69,7 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: '8',
     name: 'SINTA APRILIANI',
     role: 'CASHIER',
+    nik: '24024455',
     imageUrl: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=400&h=400&auto=format&fit=crop',
     quote: 'Melayani setulus hati di setiap transaksi.'
   }

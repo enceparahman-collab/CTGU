@@ -18,6 +18,7 @@ const TeamGrid: React.FC<TeamGridProps> = ({ isAdmin }) => {
   // State Form
   const [newName, setNewName] = useState('');
   const [newRole, setNewRole] = useState('');
+  const [newNik, setNewNik] = useState('');
   const [newQuote, setNewQuote] = useState('');
   const [previewImage, setPreviewImage] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -65,6 +66,7 @@ const TeamGrid: React.FC<TeamGridProps> = ({ isAdmin }) => {
     setEditingId(person.id);
     setNewName(person.name);
     setNewRole(person.role);
+    setNewNik(person.nik || '');
     setNewQuote(person.quote);
     setPreviewImage(person.imageUrl);
     setIsModalOpen(true);
@@ -77,8 +79,8 @@ const TeamGrid: React.FC<TeamGridProps> = ({ isAdmin }) => {
 
   const handleSaveMember = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!newName || !newRole || !previewImage) {
-        alert("Mohon lengkapi semua data (Nama, Jabatan, dan Foto).");
+    if (!newName || !newRole || !previewImage || !newNik) {
+        alert("Mohon lengkapi semua data (Nama, Jabatan, NIK, dan Foto).");
         return;
     }
 
@@ -89,6 +91,7 @@ const TeamGrid: React.FC<TeamGridProps> = ({ isAdmin }) => {
         ...m,
         name: newName.toUpperCase(),
         role: newRole.toUpperCase(),
+        nik: newNik,
         quote: newQuote || "Semangat melayani!",
         imageUrl: previewImage
       } : m);
@@ -98,6 +101,7 @@ const TeamGrid: React.FC<TeamGridProps> = ({ isAdmin }) => {
         id: Date.now().toString(),
         name: newName.toUpperCase(),
         role: newRole.toUpperCase(),
+        nik: newNik,
         quote: newQuote || "Semangat melayani!",
         imageUrl: previewImage
       };
@@ -112,6 +116,7 @@ const TeamGrid: React.FC<TeamGridProps> = ({ isAdmin }) => {
   const resetForm = () => {
     setNewName(''); 
     setNewRole(''); 
+    setNewNik('');
     setNewQuote(''); 
     setPreviewImage(null); 
     setEditingId(null);
@@ -189,8 +194,11 @@ const TeamGrid: React.FC<TeamGridProps> = ({ isAdmin }) => {
 
                 <div className="px-6 pb-8 text-center">
                   <h3 className="text-xl font-black text-gray-900 tracking-tight leading-none mb-1 break-words px-2">{person.name}</h3>
-                  <div className="inline-block px-3 py-1 bg-[#0055a5] rounded-full mb-4">
+                  <div className="inline-block px-3 py-1 bg-[#0055a5] rounded-full mb-1">
                     <p className="text-white text-[8px] uppercase tracking-[0.2em] font-black">{person.role}</p>
+                  </div>
+                  <div className="mb-4">
+                    <p className="text-gray-400 text-[9px] font-black uppercase tracking-widest">NIK: {person.nik}</p>
                   </div>
                   <div className="bg-gray-50 p-4 rounded-2xl border border-gray-100 relative min-h-[60px] flex items-center justify-center">
                     <i className="fas fa-quote-left text-gray-200 text-xl absolute top-2 left-2"></i>
@@ -272,15 +280,27 @@ const TeamGrid: React.FC<TeamGridProps> = ({ isAdmin }) => {
 
                 {/* Input Fields */}
                 <div className="space-y-4">
-                  <div className="space-y-1">
-                    <label className="text-[9px] font-black text-gray-400 uppercase tracking-widest ml-4">Nama Lengkap</label>
-                    <input 
-                      type="text" 
-                      placeholder="NAMA KARYAWAN" 
-                      value={newName} 
-                      onChange={e => setNewName(e.target.value)} 
-                      className="w-full p-5 bg-gray-50 border-2 border-gray-100 rounded-2xl outline-none focus:border-[#e31e24] font-black text-sm transition-all" 
-                    />
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="space-y-1">
+                      <label className="text-[9px] font-black text-gray-400 uppercase tracking-widest ml-4">Nama Lengkap</label>
+                      <input 
+                        type="text" 
+                        placeholder="NAMA" 
+                        value={newName} 
+                        onChange={e => setNewName(e.target.value)} 
+                        className="w-full p-4 bg-gray-50 border-2 border-gray-100 rounded-2xl outline-none focus:border-[#e31e24] font-black text-sm transition-all" 
+                      />
+                    </div>
+                    <div className="space-y-1">
+                      <label className="text-[9px] font-black text-gray-400 uppercase tracking-widest ml-4">NIK Karyawan</label>
+                      <input 
+                        type="text" 
+                        placeholder="NIK" 
+                        value={newNik} 
+                        onChange={e => setNewNik(e.target.value)} 
+                        className="w-full p-4 bg-gray-50 border-2 border-gray-100 rounded-2xl outline-none focus:border-[#e31e24] font-black text-sm transition-all" 
+                      />
+                    </div>
                   </div>
                   <div className="space-y-1">
                     <label className="text-[9px] font-black text-gray-400 uppercase tracking-widest ml-4">Jabatan / Posisi</label>

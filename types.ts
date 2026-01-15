@@ -5,6 +5,7 @@ export interface TeamMember {
   role: string;
   imageUrl: string;
   quote: string;
+  nik: string;
 }
 
 export interface Memory {
